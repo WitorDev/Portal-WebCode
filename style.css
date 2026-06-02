@@ -7,7 +7,6 @@
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
-
     display: grid;
     grid-template-areas:
         "header header"
@@ -43,7 +42,6 @@ header button {
 
 #sidebar {
     grid-area: sidebar;
-
     background-color: #f4f4f4;
     padding: 20px;
 }
@@ -64,7 +62,6 @@ header button {
 
 nav ul {
     list-style: none;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -86,9 +83,43 @@ main {
     padding: 20px;
 }
 
+#inicio {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tela-inicial {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tela-inicial h2 {
+    margin-bottom: 10px;
+    color: #0d6efd;
+}
+
+.sobre-mim {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-mim h2 {
+    margin-bottom: 10px;
+    color: #0d6efd;
+}
+
+.sobre-mim p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
 footer {
     grid-area: footer;
-
     background-color: #222;
     color: white;
 
@@ -98,25 +129,43 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    #inicio {
+        gap: 15px;
+    }
+
+    .tela-inicial,
+    .sobre-mim {
+        padding: 15px;
+    }
+
     body {
         grid-template-areas:
             "header"
             "sidebar"
             "main"
             "footer";
-
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
     }
 
     header {
         flex-direction: column;
         gap: 10px;
+        text-align: center;
     }
 
     nav ul {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    #sidebar {
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
+
+    #catalogoCursos {
+        grid-template-columns: 1fr;
     }
 }
